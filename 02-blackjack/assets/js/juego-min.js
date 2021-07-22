@@ -1,0 +1,7 @@
+const mimodulo=(()=>{"use strict";let e=[];const t=["C","D","H","S"],n=["A","J","Q","R"];let r=[];const l=document.querySelector("#btnpedir"),o=document.querySelector("#btndetener"),s=(document.querySelector("#btnnuevo"),document.querySelectorAll(".divcartas")),c=document.querySelectorAll("small"),a=()=>{e=[];for(let n=2;n<=10;n++)for(let r of t)e.push(n+r);for(let r of t)for(let t of n)e.push(t+r);return _.shuffle(e)},d=()=>{if(0===e.length)throw"No hay cartas en el deck";return e.pop()},i=(e,t)=>(r[t]=r[t]+(e=>{const t=e.substring(0,e.length-1);return isNaN(t)?"A"===t?11:10:1*t})(e),c[t].innerText=r[t],r[t]),u=(e,t)=>{const n=document.createElement("img");n.src=`assets/cartas/${e}.png`,n.classList.add("carta"),s[t].append(n)},A=e=>{let t=0;do{const n=d();if(t=i(n,r.length-1),u(n,r.length-1),e>21)break}while(t<e&&e<=21);(()=>{const[e,t]=r;setTimeout(()=>{t===e?alert("NADIE GANA"):e>21?alert("COMPUTADORA GANA"):t>21?alert("JUGADOR GANA"):alert("COMPUTADORA GANA")},100)})()};return l.addEventListener("click",()=>{const e=d(),t=i(e,0);u(e,0),t>21?(console.warn("Lo siente PERDISTE"),l.disabled=!0,o.disabled=!0,A(t)):21===t&&(console.warn("21 GANASTE"),o.disabled=!0,l.disabled=!0)}),o.addEventListener("click",()=>{l.disabled=!0,o.disabled=!0,A(r[0])}),{nuevojuego:(t=2)=>{e=a(),r=[];for(let e=0;e<t;e++)r.push(0);c.forEach(e=>e.innerText=0),s.forEach(e=>e.innerHTML=" "),l.disabled=!1,o.disabled=!1}}})();
+
+
+
+
+
+
